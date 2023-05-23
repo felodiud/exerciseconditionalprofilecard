@@ -33,14 +33,26 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name} ${variables.lastname}</h1>
-          <h2>${variables.role}</h2>
-          <h3>${variables.country} ,${variables.city}</h3>
+          <h1>${variables.name == null ? "Name" : variables.name} ${
+    variables.lastname == null ? "LastName" : variables.lastname
+  }</h1>
+          <h2>${variables.role == null ? "Role" : variables.role}</h2>
+          <h3>${variables.country == null ? "country" : variables.country} ,${
+    variables.city == null ? "city" : variables.city
+  }</h3>
           <ul class="position-right">
-            <li><a href="${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="${variables.github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="${variables.linkedin}"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="${
+              variables.twitter
+            }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="${
+              variables.github
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="${
+              variables.linkedin
+            }"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="${
+              variables.instagram
+            }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
